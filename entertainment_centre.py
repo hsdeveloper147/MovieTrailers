@@ -42,8 +42,8 @@ for jsonData in data["results"]:
     #fetching image url
     img_url = default_img_url + jsonData['poster_path']
     
-    #intantiating Moive class Object for every movie data
-    movie = media.Movie(title,overview,img_url,video_url,ratings)
+    #intantiating Moive class Object
+    movie = media.Movie(title,overview,img_url,trailer_url,ratings)
     movies.append(movie)
     
 

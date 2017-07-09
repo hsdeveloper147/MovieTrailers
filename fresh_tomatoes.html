@@ -13,6 +13,10 @@
     <style type="text/css" media="screen">
         body {
             padding-top: 80px;
+            background-color: #ffecb3;
+        }
+        * {
+            box-sizing: border-box;
         }
         #trailer .modal-dialog {
             margin-top: 200px;
@@ -31,10 +35,21 @@
         }
         .movie-tile {
             margin-bottom: 20px;
-            padding-top: 20px;
+            font-size: 10px;
+            position: relative;
+            z-index: 1;
+            height: 400px;
+            overflow-y: scroll;
+            padding-top: 10px;
+            border: 10px ridge white;
+            background-color: #ffc107;
+            
         }
         .movie-tile:hover {
-            background-color: #EEE;
+            background-color: #ff5722;
+            position: relative;
+            z-index: 5;
+            box-shadow: 2px 10px 5px #ffc107;
             cursor: pointer;
         }
         .scale-media {
@@ -49,6 +64,13 @@
             left: 0;
             top: 0;
             background-color: white;
+        }
+        .nav-style {
+            background-color: #ffa000 !important;
+            height: 60px;
+            color: #ffecb3;
+            font-weight: bold;
+            text-aling:center;
         }
     </style>
     <script type="text/javascript" charset="utf-8">
@@ -71,8 +93,8 @@
         });
         // Animate in the movies when the page loads
         $(document).ready(function () {
-          $('.movie-tile').hide().first().show("slow", function showNext() {
-            $(this).next("div").show("slow", showNext);
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
           });
         });
     </script>
@@ -94,7 +116,7 @@
 
     <!-- Main Page Content -->
     <div class="container">
-      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="navbar navbar-fixed-top nav-style" role="navigation">
         <div class="container">
           <div class="navbar-header">
             <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
@@ -104,34 +126,137 @@
     </div>
     <div class="container">
       
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="tN1A2mVnrOM" data-toggle="modal" data-target="#trailer">
-    <img src="https://upload.wikimedia.org/wikipedia/en/1/13/Toy_Story.jpg" width="220" height="342">
-    <h2>Toy Story</h2>
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="6DBi41reeF0" data-toggle="modal" data-target="#trailer">
+    <img src="http://image.tmdb.org/t/p/w300//5qcUGqWoWhEsoQwNUrtf3y3fcWn.jpg" width="200" height="250">
+    <h4>Despicable Me 3</h4>
+    <h5>Gru and his wife Lucy must stop former '80s child star Balthazar Bratt from achieving world domination.<h5>
+    <h5><em>Ratings :5.9</em><h5>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="cRdxXPV9GNQ" data-toggle="modal" data-target="#trailer">
-    <img src="https://upload.wikimedia.org/wikipedia/en/b/b0/Avatar-Teaser-Poster.jpg" width="220" height="342">
-    <h2>Avatar</h2>
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="lCkVr1n1eCA" data-toggle="modal" data-target="#trailer">
+    <img src="http://image.tmdb.org/t/p/w300//c24sv2weTHPsmDa7jEMN0m2P3RT.jpg" width="200" height="250">
+    <h4>Spider-Man: Homecoming</h4>
+    <h5>Following the events of Captain America: Civil War, Peter Parker, with the help of his mentor Tony Stark, tries to balance his life as an ordinary high school student in Queens, New York City, with fighting crime as his superhero alter ego Spider-Man as a new threat, the Vulture, emerges.<h5>
+    <h5><em>Ratings :7.4</em><h5>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="cRdxXPV9GNQ" data-toggle="modal" data-target="#trailer">
-    <img src="https://upload.wikimedia.org/wikipedia/en/b/b0/Avatar-Teaser-Poster.jpg" width="220" height="342">
-    <h2>Avatar</h2>
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="IjHgzkQM2Sg" data-toggle="modal" data-target="#trailer">
+    <img src="http://image.tmdb.org/t/p/w300//zxkY8byBnCsXodEYpK8tmwEGXBI.jpg" width="200" height="250">
+    <h4>The Mummy</h4>
+    <h5>Though safely entombed in a crypt deep beneath the unforgiving desert, an ancient queen whose destiny was unjustly taken from her is awakened in our current day, bringing with her malevolence grown over millennia, and terrors that defy human comprehension.<h5>
+    <h5><em>Ratings :5.2</em><h5>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="cRdxXPV9GNQ" data-toggle="modal" data-target="#trailer">
-    <img src="https://upload.wikimedia.org/wikipedia/en/b/b0/Avatar-Teaser-Poster.jpg" width="220" height="342">
-    <h2>Avatar</h2>
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="5lGoQhFb4NM" data-toggle="modal" data-target="#trailer">
+    <img src="http://image.tmdb.org/t/p/w300//imekS7f1OuHyUP2LAiTEM0zBzUz.jpg" width="200" height="250">
+    <h4>Wonder Woman</h4>
+    <h5>An Amazon princess comes to the world of Man to become the greatest of the female superheroes.<h5>
+    <h5><em>Ratings :7.1</em><h5>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="cRdxXPV9GNQ" data-toggle="modal" data-target="#trailer">
-    <img src="https://upload.wikimedia.org/wikipedia/en/b/b0/Avatar-Teaser-Poster.jpg" width="220" height="342">
-    <h2>Avatar</h2>
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="H0VW6sg50Pk" data-toggle="modal" data-target="#trailer">
+    <img src="http://image.tmdb.org/t/p/w300//zecMELPbU5YMQpC81Z8ImaaXuf9.jpg" width="200" height="250">
+    <h4>Alien: Covenant</h4>
+    <h5>Bound for a remote planet on the far side of the galaxy, the crew of the colony ship Covenant discovers what they think is an uncharted paradise, but is actually a dark, dangerous world — whose sole inhabitant is the “synthetic” David, survivor of the doomed Prometheus expedition.<h5>
+    <h5><em>Ratings :5.7</em><h5>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="cRdxXPV9GNQ" data-toggle="modal" data-target="#trailer">
-    <img src="https://upload.wikimedia.org/wikipedia/en/b/b0/Avatar-Teaser-Poster.jpg" width="220" height="342">
-    <h2>Avatar</h2>
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="UEP1Mk6Un98" data-toggle="modal" data-target="#trailer">
+    <img src="http://image.tmdb.org/t/p/w300//y52mjaCLoJJzxfcDDlksKDngiDx.jpg" width="200" height="250">
+    <h4>War for the Planet of the Apes</h4>
+    <h5>Caesar and his apes are forced into a deadly conflict with an army of humans led by a ruthless Colonel. After the apes suffer unimaginable losses, Caesar wrestles with his darker instincts and begins his own mythic quest to avenge his kind. As the journey finally brings them face to face, Caesar and the Colonel are pitted against each other in an epic battle that will determine the fate of both their species and the future of the planet.<h5>
+    <h5><em>Ratings :6.4</em><h5>
+</div>
+
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="z2z857RSfhk" data-toggle="modal" data-target="#trailer">
+    <img src="http://image.tmdb.org/t/p/w300//mBkOBaxjr7IBHGuQS3sSFeyYTM.jpg" width="200" height="250">
+    <h4>Baby Driver</h4>
+    <h5>After being coerced into working for a crime boss, a young getaway driver finds himself taking part in a heist doomed to fail.<h5>
+    <h5><em>Ratings :6.5</em><h5>
+</div>
+
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="LZrX9mffH8Y" data-toggle="modal" data-target="#trailer">
+    <img src="http://image.tmdb.org/t/p/w300//zkXnKIwX5pYorKJp2fjFSfNyKT0.jpg" width="200" height="250">
+    <h4>John Wick: Chapter 2</h4>
+    <h5>John Wick is forced out of retirement by a former associate looking to seize control of a shadowy international assassins’ guild. Bound by a blood oath to aid him, Wick travels to Rome and does battle against some of the world’s most dangerous killers.<h5>
+    <h5><em>Ratings :6.6</em><h5>
+</div>
+
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="DX2w7kH0p20" data-toggle="modal" data-target="#trailer">
+    <img src="http://image.tmdb.org/t/p/w300//uLHorVHuWQZ1HugTp0bbD19jef7.jpg" width="200" height="250">
+    <h4>The Lost City of Z</h4>
+    <h5>At the dawn of the 20th century, British explorer Percy Fawcett journeys into the Amazon, where he discovers evidence of a previously unknown, advanced civilization that may have once inhabited the region. Despite being ridiculed by the scientific establishment, which views indigenous populations as savages, the determined Fawcett, supported by his devoted wife, son, and aide-de-camp, returns to his beloved jungle in an attempt to prove his case.<h5>
+    <h5><em>Ratings :6.1</em><h5>
+</div>
+
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="QUlr8Am4zQ0" data-toggle="modal" data-target="#trailer">
+    <img src="http://image.tmdb.org/t/p/w300//bQVqd5rWrx5GbXhJNuvKy4Viz6j.jpg" width="200" height="250">
+    <h4>The Circle</h4>
+    <h5>A young tech worker takes a job at a powerful Internet corporation, quickly rises up the company's ranks, and soon finds herself in a perilous situation concerning privacy, surveillance and freedom. She comes to learn that her decisions and actions will determine the future of humanity.<h5>
+    <h5><em>Ratings :5.2</em><h5>
+</div>
+
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="Uw2Styd2RAU" data-toggle="modal" data-target="#trailer">
+    <img src="http://image.tmdb.org/t/p/w300//88qfHWhlOBYXp69277QFhdPYnWf.jpg" width="200" height="250">
+    <h4>Resident Evil: Vendetta</h4>
+    <h5>BSAA Chris Redfield enlists the help of government agent Leon S. Kennedy and Professor Rebecca Chambers from Alexander Institute of Biotechnology to stop a death merchant with a vengeance from spreading a deadly virus in New York.<h5>
+    <h5><em>Ratings :6.7</em><h5>
+</div>
+
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="Bp5q1sejIX0" data-toggle="modal" data-target="#trailer">
+    <img src="http://image.tmdb.org/t/p/w300//6HE4xd8zloDqmjMZuhUCCw2UcY1.jpg" width="200" height="250">
+    <h4>Baywatch</h4>
+    <h5>Devoted lifeguard Mitch Buchannon butts heads with a brash new recruit. Together, they uncover a local criminal plot that threatens the future of the Bay.<h5>
+    <h5><em>Ratings :5.7</em><h5>
+</div>
+
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="Af2N3N5rURI" data-toggle="modal" data-target="#trailer">
+    <img src="http://image.tmdb.org/t/p/w300//sDlafquO1IvypRLbNdcC4b3oSoa.jpg" width="200" height="250">
+    <h4>2:22</h4>
+    <h5>A man's life is derailed when an ominous pattern of events repeats itself in exactly the same manner every day, ending at precisely 2:22 p.m.<h5>
+    <h5><em>Ratings :4.9</em><h5>
+</div>
+
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="DdmFD81pBWw" data-toggle="modal" data-target="#trailer">
+    <img src="http://image.tmdb.org/t/p/w300//5rr7tQfzS0ARqEea3W9SNSFGRzb.jpg" width="200" height="250">
+    <h4>Once Upon a Time in Venice</h4>
+    <h5>A Los Angeles detective seeks out the ruthless gang that stole his dog.<h5>
+    <h5><em>Ratings :5.4</em><h5>
+</div>
+
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="G_yyIfhhR8I" data-toggle="modal" data-target="#trailer">
+    <img src="http://image.tmdb.org/t/p/w300//zSVRoZMce3skt6qR6JSD0IXQ8af.jpg" width="200" height="250">
+    <h4>Free Fire</h4>
+    <h5>A crime drama set in 1970s Boston, about a gun sale which goes wrong.<h5>
+    <h5><em>Ratings :6.4</em><h5>
+</div>
+
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="U1eQYk74R1g" data-toggle="modal" data-target="#trailer">
+    <img src="http://image.tmdb.org/t/p/w300//fyy1nDC8wm553FCiBDojkJmKLCs.jpg" width="200" height="250">
+    <h4>Cars 3</h4>
+    <h5>Blindsided by a new generation of blazing-fast racers, the legendary Lightning McQueen is suddenly pushed out of the sport he loves. To get back in the game, he will need the help of an eager young race technician with her own plan to win, inspiration from the late Fabulous Hudson Hornet, and a few unexpected turns. Proving that #95 isn't through yet will test the heart of a champion on Piston Cup Racing’s biggest stage!<h5>
+    <h5><em>Ratings :6.2</em><h5>
+</div>
+
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="2PR9MOPTI7g" data-toggle="modal" data-target="#trailer">
+    <img src="http://image.tmdb.org/t/p/w300//uM1dNEmcAeyDGjMcFLlkKOyBgft.jpg" width="200" height="250">
+    <h4>Nerve</h4>
+    <h5>Industrious high school senior, Vee Delmonico, has had it with living life on the sidelines. When pressured by friends to join the popular online game Nerve, Vee decides to sign up for just one dare in what seems like harmless fun. But as she finds herself caught up in the thrill of the adrenaline-fueled competition partnered with a mysterious stranger, the game begins to take a sinister turn with increasingly dangerous acts, leading her into a high stakes finale that will determine her entire future.<h5>
+    <h5><em>Ratings :7</em><h5>
+</div>
+
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="LBmBcASLdK8" data-toggle="modal" data-target="#trailer">
+    <img src="http://image.tmdb.org/t/p/w300//HmALxBQK8SKpOEOmqyFxOavIPR.jpg" width="200" height="250">
+    <h4>47 Meters Down</h4>
+    <h5>Two sisters on Mexican vacation are trapped in a shark observation cage at the bottom of the ocean, with oxygen running low and great whites circling nearby, they have less than an hour of air left to figure out how to get to the surface.<h5>
+    <h5><em>Ratings :4.7</em><h5>
+</div>
+
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="T4yOIInh3QE" data-toggle="modal" data-target="#trailer">
+    <img src="http://image.tmdb.org/t/p/w300//5TVBtMhwOldZW82g1Ka11IE86wC.jpg" width="200" height="250">
+    <h4>The Zookeeper's Wife</h4>
+    <h5>The account of keepers of the Warsaw Zoo, Jan and Antonina Zabinski, who helped save hundreds of people and animals during the Nazi invasion.<h5>
+    <h5><em>Ratings :7</em><h5>
 </div>
 
     </div>
