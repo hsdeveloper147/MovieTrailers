@@ -26,6 +26,10 @@ main_page_head = '''
     <style type="text/css" media="screen">
         body {
             padding-top: 80px;
+            background-color: #ffecb3;
+        }
+        * {
+            box-sizing: border-box;
         }
         #trailer .modal-dialog {
             margin-top: 200px;
@@ -44,10 +48,21 @@ main_page_head = '''
         }
         .movie-tile {
             margin-bottom: 20px;
-            padding-top: 20px;
+            font-size: 10px;
+            position: relative;
+            z-index: 1;
+            height: 400px;
+            overflow-y: scroll;
+            padding-top: 10px;
+            border: 10px ridge white;
+            background-color: #ffc107;
+            
         }
         .movie-tile:hover {
-            background-color: #EEE;
+            background-color: #ff5722;
+            position: relative;
+            z-index: 5;
+            box-shadow: 2px 10px 5px #ffc107;
             cursor: pointer;
         }
         .scale-media {
@@ -62,6 +77,13 @@ main_page_head = '''
             left: 0;
             top: 0;
             background-color: white;
+        }
+        .nav-style {
+            background-color: #ffa000 !important;
+            height: 60px;
+            color: #ffecb3;
+            font-weight: bold;
+            text-aling:center;
         }
     </style>
     <script type="text/javascript" charset="utf-8">
@@ -84,8 +106,8 @@ main_page_head = '''
         });
         // Animate in the movies when the page loads
         $(document).ready(function () {
-          $('.movie-tile').hide().first().show("slow", function showNext() {
-            $(this).next("div").show("slow", showNext);
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
           });
         });
     </script>
@@ -111,10 +133,10 @@ main_page_content = '''
 
     <!-- Main Page Content -->
     <div class="container">
-      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="navbar navbar-fixed-top nav-style" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
+            <a class="navbar-brands" href="#">Fresh Tomatoes Movie Trailers</a>
           </div>
         </div>
       </div>
@@ -129,9 +151,11 @@ main_page_content = '''
 
 # A single movie entry html template
 movie_tile_content = '''
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
-    <img src="{poster_image_url}" width="220" height="342">
-    <h2>{movie_title}</h2>
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
+    <img src="{poster_image_url}" width="200" height="250">
+    <h4>{movie_title}</h4>
+    <h5>{storyline}<h5>
+    <h5><em>Ratings :{ratings}</em><h5>
 </div>
 '''
 
@@ -145,22 +169,25 @@ def create_movie_tiles_content(movies):
             r'(?<=v=)[^&#]+', movie.trailer_youtube_url)
         youtube_id_match = youtube_id_match or re.search(
             r'(?<=be/)[^&#]+', movie.trailer_youtube_url)
-        print(youtube_id_match.group(0))
         trailer_youtube_id = (youtube_id_match.group(0) if youtube_id_match
                               else None)
-
         # Append the tile for the movie with its content filled in
+        line = movie.storyline.encode('utf-8')
+        #line = line[0:180] + '...'
+        rating = movie.ratings.encode('utf-8')
         content += movie_tile_content.format(
             movie_title=movie.title,
             poster_image_url=movie.poster_image_url,
-            trailer_youtube_id=trailer_youtube_id
+            trailer_youtube_id=trailer_youtube_id,
+            storyline=line,
+            ratings=rating
         )
     return content
 
 
 def open_movies_page(movies):
     # Create or overwrite the output file
-    output_file = open('fresh_tomatoes.html', 'w')
+    output_file = open('index.html', 'w')
 
     # Replace the movie tiles placeholder generated content
     rendered_content = main_page_content.format(

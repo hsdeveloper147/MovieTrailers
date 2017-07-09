@@ -6,47 +6,45 @@ Created on Sat Jul 08 23:21:45 2017
 """
 import fresh_tomatoes
 import media
+import urllib
+import json
 
-toy_story = media.Movie("Toy Story",
-                            "A story of a boy and his toys that come to life",
-                            "https://upload.wikimedia.org/wikipedia/en/1/13/Toy_Story.jpg",
-                            "https://www.youtube.com/watch?v=tN1A2mVnrOM")
-#print(toy_story.storyline)
-#webbrowser.open(toy_story.trailer_youtube_url)
+api_key = '2b75293ff31f7a9106524c6645e8fb58'
+link = 'https://api.themoviedb.org/3/movie/now_playing?api_key=' + api_key + '&page=1&genre=Animation'
+default_img_url = 'http://image.tmdb.org/t/p/w300/'
+default_video_url = 'http://api.themoviedb.org/3/movie/'
+last_part = '/videos?api_key='
+default_youtube_url = 'https://www.youtube.com/watch?v='
 
-avatar = media.Movie("Avatar",
-                    "A marine on an alien planet",
-                    "https://upload.wikimedia.org/wikipedia/en/b/b0/Avatar-Teaser-Poster.jpg",
-                    "https://www.youtube.com/watch?v=cRdxXPV9GNQ"
-                    )
+webfile = urllib.urlopen(link)
+content = webfile.read()
+data = json.loads(content)
 
-#print(avatar.trailer_youtube_url)
-#avatar.show_trailer()
+movies = []
 
-avatar1 = media.Movie("Avatar",
-                    "A marine on an alien planet",
-                    "https://upload.wikimedia.org/wikipedia/en/b/b0/Avatar-Teaser-Poster.jpg",
-                    "https://www.youtube.com/watch?v=cRdxXPV9GNQ"
-                    )
+#putting json data into movies List
+for jsonData in data["results"]:
+    movieData = []
+    movie_id = jsonData['id']
+    title = jsonData['title']
+    ratings = str(jsonData['vote_average'])
+    overview = jsonData['overview']
+    
+    #fetching youtube url
+    video_url = default_video_url + str(movie_id) + last_part + api_key
+    dataResponse = urllib.urlopen(video_url).read()
+    jsonResponse = json.loads(dataResponse)
+    key = jsonResponse['results'][0]['key']
+    if(len(key) <=2):
+        continue
+    trailer_url = default_youtube_url + key
+    
+    #fetching image url
+    img_url = default_img_url + jsonData['poster_path']
+    
+    #intantiating Moive class Object for every movie data
+    movie = media.Movie(title,overview,img_url,video_url,ratings)
+    movies.append(movie)
+    
 
-avatar2 = media.Movie("Avatar",
-                    "A marine on an alien planet",
-                    "https://upload.wikimedia.org/wikipedia/en/b/b0/Avatar-Teaser-Poster.jpg",
-                    "https://www.youtube.com/watch?v=cRdxXPV9GNQ"
-                    )
-
-avatar3 = media.Movie("Avatar",
-                    "A marine on an alien planet",
-                    "https://upload.wikimedia.org/wikipedia/en/b/b0/Avatar-Teaser-Poster.jpg",
-                    "https://www.youtube.com/watch?v=cRdxXPV9GNQ"
-                    )
-
-avatar4 = media.Movie("Avatar",
-                    "A marine on an alien planet",
-                    "https://upload.wikimedia.org/wikipedia/en/b/b0/Avatar-Teaser-Poster.jpg",
-                    "https://www.youtube.com/watch?v=cRdxXPV9GNQ"
-                    )
-
-movies = [toy_story, avatar, avatar1, avatar2, avatar3, avatar4]
 fresh_tomatoes.open_movies_page(movies)
-print(media.Movie.VALID_RATINGS)
