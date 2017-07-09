@@ -9,7 +9,7 @@ import media
 import urllib
 import json
 
-api_key = '2b75293ff31f7a9106524c6645e8fb58'
+api_key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXX'
 link = 'https://api.themoviedb.org/3/movie/now_playing?api_key=' + api_key + '&page=1&genre=Animation'
 default_img_url = 'http://image.tmdb.org/t/p/w300/'
 default_video_url = 'http://api.themoviedb.org/3/movie/'
