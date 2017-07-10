@@ -56,7 +56,7 @@ main_page_head = '''
             padding-top: 10px;
             border: 10px ridge white;
             background-color: #ffc107;
-            
+
         }
         .movie-tile:hover {
             background-color: #ff5722;
@@ -97,6 +97,7 @@ main_page_head = '''
         $(document).on('click', '.movie-tile', function (event) {
             var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
             var sourceUrl = 'https://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+
             $("#trailer-video-container").empty().append($("<iframe></iframe>", {
               'id': 'trailer-video',
               'type': 'text-html',
@@ -173,7 +174,6 @@ def create_movie_tiles_content(movies):
                               else None)
         # Append the tile for the movie with its content filled in
         line = movie.storyline.encode('utf-8')
-        #line = line[0:180] + '...'
         rating = movie.ratings.encode('utf-8')
         content += movie_tile_content.format(
             movie_title=movie.title,

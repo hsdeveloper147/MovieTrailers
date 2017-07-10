@@ -43,7 +43,7 @@
             padding-top: 10px;
             border: 10px ridge white;
             background-color: #ffc107;
-            
+
         }
         .movie-tile:hover {
             background-color: #ff5722;
@@ -83,7 +83,8 @@
         // Start playing the video whenever the trailer modal is opened
         $(document).on('click', '.movie-tile', function (event) {
             var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
-            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            var sourceUrl = 'https://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+
             $("#trailer-video-container").empty().append($("<iframe></iframe>", {
               'id': 'trailer-video',
               'type': 'text-html',
@@ -126,11 +127,18 @@
     </div>
     <div class="container">
       
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="5lGoQhFb4NM" data-toggle="modal" data-target="#trailer">
+    <img src="http://image.tmdb.org/t/p/w300//imekS7f1OuHyUP2LAiTEM0zBzUz.jpg" width="200" height="250">
+    <h4>Wonder Woman</h4>
+    <h5>An Amazon princess comes to the world of Man to become the greatest of the female superheroes.<h5>
+    <h5><em>Ratings :7.1</em><h5>
+</div>
+
 <div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="6DBi41reeF0" data-toggle="modal" data-target="#trailer">
     <img src="http://image.tmdb.org/t/p/w300//5qcUGqWoWhEsoQwNUrtf3y3fcWn.jpg" width="200" height="250">
     <h4>Despicable Me 3</h4>
     <h5>Gru and his wife Lucy must stop former '80s child star Balthazar Bratt from achieving world domination.<h5>
-    <h5><em>Ratings :5.9</em><h5>
+    <h5><em>Ratings :6</em><h5>
 </div>
 
 <div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="lCkVr1n1eCA" data-toggle="modal" data-target="#trailer">
@@ -147,13 +155,6 @@
     <h5><em>Ratings :5.2</em><h5>
 </div>
 
-<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="5lGoQhFb4NM" data-toggle="modal" data-target="#trailer">
-    <img src="http://image.tmdb.org/t/p/w300//imekS7f1OuHyUP2LAiTEM0zBzUz.jpg" width="200" height="250">
-    <h4>Wonder Woman</h4>
-    <h5>An Amazon princess comes to the world of Man to become the greatest of the female superheroes.<h5>
-    <h5><em>Ratings :7.1</em><h5>
-</div>
-
 <div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="H0VW6sg50Pk" data-toggle="modal" data-target="#trailer">
     <img src="http://image.tmdb.org/t/p/w300//zecMELPbU5YMQpC81Z8ImaaXuf9.jpg" width="200" height="250">
     <h4>Alien: Covenant</h4>
@@ -165,14 +166,7 @@
     <img src="http://image.tmdb.org/t/p/w300//y52mjaCLoJJzxfcDDlksKDngiDx.jpg" width="200" height="250">
     <h4>War for the Planet of the Apes</h4>
     <h5>Caesar and his apes are forced into a deadly conflict with an army of humans led by a ruthless Colonel. After the apes suffer unimaginable losses, Caesar wrestles with his darker instincts and begins his own mythic quest to avenge his kind. As the journey finally brings them face to face, Caesar and the Colonel are pitted against each other in an epic battle that will determine the fate of both their species and the future of the planet.<h5>
-    <h5><em>Ratings :6.4</em><h5>
-</div>
-
-<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="z2z857RSfhk" data-toggle="modal" data-target="#trailer">
-    <img src="http://image.tmdb.org/t/p/w300//mBkOBaxjr7IBHGuQS3sSFeyYTM.jpg" width="200" height="250">
-    <h4>Baby Driver</h4>
-    <h5>After being coerced into working for a crime boss, a young getaway driver finds himself taking part in a heist doomed to fail.<h5>
-    <h5><em>Ratings :6.5</em><h5>
+    <h5><em>Ratings :5.5</em><h5>
 </div>
 
 <div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="LZrX9mffH8Y" data-toggle="modal" data-target="#trailer">
@@ -182,11 +176,11 @@
     <h5><em>Ratings :6.6</em><h5>
 </div>
 
-<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="DX2w7kH0p20" data-toggle="modal" data-target="#trailer">
-    <img src="http://image.tmdb.org/t/p/w300//uLHorVHuWQZ1HugTp0bbD19jef7.jpg" width="200" height="250">
-    <h4>The Lost City of Z</h4>
-    <h5>At the dawn of the 20th century, British explorer Percy Fawcett journeys into the Amazon, where he discovers evidence of a previously unknown, advanced civilization that may have once inhabited the region. Despite being ridiculed by the scientific establishment, which views indigenous populations as savages, the determined Fawcett, supported by his devoted wife, son, and aide-de-camp, returns to his beloved jungle in an attempt to prove his case.<h5>
-    <h5><em>Ratings :6.1</em><h5>
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="z2z857RSfhk" data-toggle="modal" data-target="#trailer">
+    <img src="http://image.tmdb.org/t/p/w300//mBkOBaxjr7IBHGuQS3sSFeyYTM.jpg" width="200" height="250">
+    <h4>Baby Driver</h4>
+    <h5>After being coerced into working for a crime boss, a young getaway driver finds himself taking part in a heist doomed to fail.<h5>
+    <h5><em>Ratings :6.6</em><h5>
 </div>
 
 <div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="QUlr8Am4zQ0" data-toggle="modal" data-target="#trailer">
@@ -217,25 +211,11 @@
     <h5><em>Ratings :4.9</em><h5>
 </div>
 
-<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="DdmFD81pBWw" data-toggle="modal" data-target="#trailer">
-    <img src="http://image.tmdb.org/t/p/w300//5rr7tQfzS0ARqEea3W9SNSFGRzb.jpg" width="200" height="250">
-    <h4>Once Upon a Time in Venice</h4>
-    <h5>A Los Angeles detective seeks out the ruthless gang that stole his dog.<h5>
-    <h5><em>Ratings :5.4</em><h5>
-</div>
-
-<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="G_yyIfhhR8I" data-toggle="modal" data-target="#trailer">
-    <img src="http://image.tmdb.org/t/p/w300//zSVRoZMce3skt6qR6JSD0IXQ8af.jpg" width="200" height="250">
-    <h4>Free Fire</h4>
-    <h5>A crime drama set in 1970s Boston, about a gun sale which goes wrong.<h5>
-    <h5><em>Ratings :6.4</em><h5>
-</div>
-
 <div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="U1eQYk74R1g" data-toggle="modal" data-target="#trailer">
     <img src="http://image.tmdb.org/t/p/w300//fyy1nDC8wm553FCiBDojkJmKLCs.jpg" width="200" height="250">
     <h4>Cars 3</h4>
     <h5>Blindsided by a new generation of blazing-fast racers, the legendary Lightning McQueen is suddenly pushed out of the sport he loves. To get back in the game, he will need the help of an eager young race technician with her own plan to win, inspiration from the late Fabulous Hudson Hornet, and a few unexpected turns. Proving that #95 isn't through yet will test the heart of a champion on Piston Cup Racing’s biggest stage!<h5>
-    <h5><em>Ratings :6.2</em><h5>
+    <h5><em>Ratings :6.3</em><h5>
 </div>
 
 <div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="2PR9MOPTI7g" data-toggle="modal" data-target="#trailer">
@@ -252,11 +232,32 @@
     <h5><em>Ratings :4.7</em><h5>
 </div>
 
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="DdmFD81pBWw" data-toggle="modal" data-target="#trailer">
+    <img src="http://image.tmdb.org/t/p/w300//5rr7tQfzS0ARqEea3W9SNSFGRzb.jpg" width="200" height="250">
+    <h4>Once Upon a Time in Venice</h4>
+    <h5>A Los Angeles detective seeks out the ruthless gang that stole his dog.<h5>
+    <h5><em>Ratings :5.4</em><h5>
+</div>
+
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="G_yyIfhhR8I" data-toggle="modal" data-target="#trailer">
+    <img src="http://image.tmdb.org/t/p/w300//zSVRoZMce3skt6qR6JSD0IXQ8af.jpg" width="200" height="250">
+    <h4>Free Fire</h4>
+    <h5>A crime drama set in 1970s Boston, about a gun sale which goes wrong.<h5>
+    <h5><em>Ratings :6.4</em><h5>
+</div>
+
 <div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="T4yOIInh3QE" data-toggle="modal" data-target="#trailer">
     <img src="http://image.tmdb.org/t/p/w300//5TVBtMhwOldZW82g1Ka11IE86wC.jpg" width="200" height="250">
     <h4>The Zookeeper's Wife</h4>
     <h5>The account of keepers of the Warsaw Zoo, Jan and Antonina Zabinski, who helped save hundreds of people and animals during the Nazi invasion.<h5>
     <h5><em>Ratings :7</em><h5>
+</div>
+
+<div class="col-md-4 col-lg-4 movie-tile text-center" data-trailer-youtube-id="ojLzEjAN5xE" data-toggle="modal" data-target="#trailer">
+    <img src="http://image.tmdb.org/t/p/w300//4VOyofBd1pexblxtDZYtYIk7NI4.jpg" width="200" height="250">
+    <h4>Colossal</h4>
+    <h5>A woman discovers that severe catastrophic events are somehow connected to the mental breakdown from which she's suffering.<h5>
+    <h5><em>Ratings :6.4</em><h5>
 </div>
 
     </div>
